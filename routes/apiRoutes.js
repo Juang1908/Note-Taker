@@ -2,8 +2,10 @@ const router = require('express').Router();
 const fs = require('fs');  
 const { v4: uuidv4 } = require('uuid');
 const util = require('util');
+const path = require('path');
 const readFile = util.promisify(fs.readFile);
 const writeFile = util.promisify(fs.writeFile);
+
 const getNotes = ()=>{
 return readFile('db/db.json', 'utf-8').then(rawNotes => [].concat(JSON.parse(rawNotes)))
  }
@@ -18,9 +20,6 @@ console.log('hit route')
     .catch((err) => res.status (500).json(err));
   });
 
-
-
-
 // POST
 
 router.post('/notes', (req, res) => {
@@ -29,16 +28,17 @@ getNotes().then(oldNotes =>{
   let newNotes = [...oldNotes,noteObject]
   writeFile('db/db.json', JSON.stringify(newNotes)).then(()=>res.json({msg:'Success'})).catch((err) => res.status (500).json(err));
 })
-   
-  
   });
 
 
 //  EXtra credit DELETE
 
-// router.delete('/notes', (req, res) => {
-
-    
+//  GETTING AN ERROR
+// router.delete('/notes/:id', (req, res) => {
+//   let notes = JSON.parse(readFile(path.join(__dirname,'..', 'db/db.json')));
+//   notes = notes.filter(note => note.id == req.params.id);
+//     writeFile(path.join(__dirname, '..', 'db/bd.json'), JSON.stringify(notes));
+//     res.json({ message: "Note had been deleted"});
 //   });
 
 
