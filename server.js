@@ -1,9 +1,8 @@
 const express = require('express');
 const path = require('path');
-const apiRoutes = require('./helpers/apiRoutes');
-const htmlRoutes = require('./helpers/htmlRoutes');
-// const fs = require('fs');  // ?
-// const uuid = require('uuid'); //?
+const apiRoutes = require('./routes/apiRoutes');
+const htmlRoutes = require('./routes/htmlRoutes');
+
 
 const app = express();
 const PORT = 3001;
@@ -11,7 +10,7 @@ const PORT = 3001;
 // Middleware/static
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static(path.join(__dirname, '/Develop/public')));
+app.use(express.static(path.join(__dirname, '/public')));
 app.use('/api', apiRoutes);
 app.use('/', htmlRoutes);
 
