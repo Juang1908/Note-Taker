@@ -32,7 +32,16 @@ As a small business owner. I want to be able to write and save notes, so that I 
 
 ![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 
+### Usage:
+
+Heroku Link: https://note-ttaker.herokuapp.com/
+Repo Link: https://github.com/Juang1908/Note-Taker
+
 ### Screenshot:
+
+![Home](images/Screenshot%203.jpg)
+![Notes](images/Screenshot%201.jpg)
+![Succes](images/Screenshot%202.jpg)
 
 ### Questions? E-mail
 
