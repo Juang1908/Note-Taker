@@ -33,7 +33,7 @@ getNotes().then(oldNotes =>{
 
 //  EXtra credit DELETE
 
-//  GETTING AN ERROR
+//  GETTING AN ERROR BUT GOT IT FIXED = I WAS MISSING process.env.PORT || 3001;process.env.PORT || 3001; ON SERVER.JS
 router.delete('/notes/:id', (req, res) => {
   console.log('deleting notes')
   getNotes()
